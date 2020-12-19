@@ -1,0 +1,22 @@
+<table class="table">
+    <thead class="thead-dark">
+    <tr>
+        <th>No</th>
+        <th>Judul</th>
+        <th>Isi</th>
+        <th>Aksi</th>
+        <th></th>
+    </tr>
+    </thead>
+        <tbody>
+            @foreach($beritas as $item)
+            <tr>
+                <td>{{ $loop->iteration }}</td>
+                <td>{{ $item->judul }}</td>
+                <td>{{ $item->isi }}</td>
+                <td><a href="{{ route('berita.show',$item->id) }}" class="btn btn-success">Tampil</a></td>
+                <td><a href="{{ route('berita.destroy',$item->id) }}" class="btn btn-danger">Hapus</a></td>
+            </tr>
+            @endforeach
+        </tbody>
+</table>
